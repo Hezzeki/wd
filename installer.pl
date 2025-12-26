@@ -6,13 +6,13 @@ use File::Spec;
 # For creating recursive paths
 use File::Path qw(make_path);
 use Cwd;
-my $wd_dir = File::Spec->catfile(File::HomeDir->my_home, ".config", ".wd");
+# my $wd_dir = File::Spec->catfile(File::HomeDir->my_home, ".config", ".wd");
 # We test its existence:
-if (! -d $wd_dir){
-    print "The directory needs to be created: $wd_dir\n";
-    make_path $wd_dir or die "Failed to create the path: $!\n";
-    print "Successfully created the directory!\n"
-}
+# if (! -d $wd_dir){
+#     print "The directory needs to be created: $wd_dir\n";
+#     make_path $wd_dir or die "Failed to create the path: $!\n";
+#     print "Successfully created the directory!\n"
+# }
 # Now we need to put this function as an ln -s <wd_bash> /opt/homebrew/bin/
 # If they call this up to this point without mac I skip them! if they pass -l <target> I will link there for them.
 # It should create a script file wd which gets stored there, script file refernces cwd for here!
