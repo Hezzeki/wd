@@ -1,0 +1,24 @@
+This program is for managing working directories and switching between contexts as well as adding them.
+
+It is written in perl. There are some major modes see here (this project was done quickly shouldn't take long to read src: wd.pl + installer.pl):
+
+wd -l ~ List all the working directories, their assist string if it exists and path.
+	If called with a string it uses this stirng as a regular expression to match under in awk
+	ex: wd -l word -> Will match all names with /.*word.*/ in them.
+wd -a ~ Add a working directory (if it exists, else return and error) anything after this (whitespace seperated) is considered an assist string and is stored as help to remember what the directory is for.  
+	The order of syntax is: wd -a <name> <dir_path> [<Assist string>] 
+wd -o ~ Switch a wd directory to a new name: wd -o <old_name> <new_name> [<New Assist String>]
+		If the New Assist string is left out, we use the old one. 
+wd -h ~ Get help for the wd command and its use-case
+wd -r ~ Remove a directory that was registred by name (the name must be unique)
+wd <name> ~ Change to the directory registered under <name>. 
+
+Make sure to run the following cpan installs:
+cpan -i File::Touch 
+cpan -i File::HomeDir
+
+
+To install wd.pl, run `perl installer.pl`. Note this was designed for linux like systems, adjustments may be required for Windows etc.
+
+* Perl Version:
+v5.40.2.
