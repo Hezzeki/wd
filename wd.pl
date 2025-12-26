@@ -43,7 +43,7 @@ if (! -f $wd_database){
 # path is (?<path>[\w\/-]+)
 # anno is (?<anno>(?:\s|.)*)
 my $name_re = qr/[-\w]+/;
-my $path_re = qr/[-\w\/]+/;
+my $path_re = qr/[-\w\/.]+/;
 my $anno_re = qr/(?:\s|.)*/;
 my $format = qr/(?<name>\A$name_re)\s+(?<path>$path_re)(?<anno>$anno_re)/;
 my @appends = ();
