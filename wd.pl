@@ -20,7 +20,7 @@ sub explain_help {
     \twd <name> ~ Change to the directory registered under <name>. Make sure to wrap this to cd for the actual switch.
 
     remember to pass the results to cd if you really want to change:
-    wd <args> | cd
+    cd $(wd <name>) 
 };
     exit 0;
 }
